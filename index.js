@@ -1255,7 +1255,7 @@ app.post('/api/punishment-settings', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/auth/discord', passport.authenticate('discord'));
@@ -1271,7 +1271,7 @@ app.get('/dashboard', (req, res) => {
     if (!req.isAuthenticated()) {
         return res.redirect('/auth/discord');
     }
-    res.sendFile(path.join(__dirname, 'views', 'dashboard.html'));
+    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
 });
 
 app.get('/api/user', (req, res) => {
@@ -1596,4 +1596,5 @@ app.listen(3000, () => {
     console.log('🔧 Ricorda di configurare le variabili d\'ambiente');
     console.log('© 2025 Sefion Security - Tutti i diritti riservati');
 });
+
 
